@@ -226,6 +226,10 @@ app.get('/api/bookings', async (req,res) => {
   res.json( await Booking.find({user:userData.id}).populate('place') );
 });
 
+app.get('/', (req, res) => {
+  res.send('✅ Airbnb Backend is running successfully!');
+});
+
 app.listen(4000);
 console.log('✅ Server running on http://localhost:4000');
 
